@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>سامانه استعلام اصالت مجوز - باشگاه تیراندازی آپریوم</title>
+    <!-- فونت وزیرمتن -->
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
     <style>
         * {
@@ -31,11 +32,6 @@
             display: flex;
             flex-direction: column;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            animation: fadeIn 0.8s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
         }
         .header {
             background: linear-gradient(135deg, #134e24 0%, #1b5e20 100%);
@@ -188,6 +184,7 @@
 <body>
 
     <div class="container">
+        <!-- هدر بالای صفحه -->
         <div class="header">
             <div class="profile-img-container">
                 <img src="IMG_1096.jpeg" alt="لوگو باشگاه">
@@ -197,3 +194,61 @@
         </div>
 
         <div class="content">
+            <!-- وضعیت مجوز -->
+            <div class="status-box">
+                <span>✅ وضعیت مجوز: معتبر و فعال</span>
+            </div>
+
+            <!-- اطلاعات شخصی با آیکون‌های استاندارد و پس‌زمینه حرفه‌ای -->
+            <div class="personal-info-card">
+                <div class="info-row">
+                    <span class="label">👤 نام و نام خانوادگی:</span>
+                    <span class="value">فاطمه امیدوار همت آبادی</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">🆔 کد ملی:</span>
+                    <span class="value">۰۰۱۴۵۴۱۴۰۸</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">👨 نام پدر:</span>
+                    <span class="value">بمانعلی</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">📅 تاریخ تولد:</span>
+                    <span class="value">۱۳۷۰/۰۷/۲۳</span>
+                </div>
+            </div>
+
+            <!-- مشخصات سلاح -->
+            <div class="card-section">
+                <div class="section-title">مشخصات سلاح ثبت شده</div>
+                <div class="section-img">
+                    <img src="IMG_1097.jpeg" alt="تپانچه">
+                </div>
+                <div class="info-row" style="border: none; padding-bottom: 4px;">
+                    <span class="label">🔫 نوع و مدل:</span>
+                    <span class="value">تپانچه بادی Walther CP99 (مشکی)</span>
+                </div>
+                <div class="info-row" style="border: none; padding-top: 4px;">
+                    <span class="label">🔢 شماره سریال:</span>
+                    <span class="value">627768gh</span>
+                </div>
+            </div>
+
+            <!-- تصویر آموزشگاه -->
+            <div class="card-section">
+                <div class="section-title">تصویر آموزشگاه</div>
+                <div class="section-img" style="width: 100%; height: 130px; border-radius: 12px;">
+                    <img src="IMG_1095.jpeg" alt="آموزشگاه">
+                </div>
+            </div>
+        </div>
+
+        <!-- فوتر -->
+        <div class="footer-note">
+            این مجوز صرفاً جهت استفاده از تسلیحات مجاز در داخل فضای باشگاه تیراندازی آپریوم معتبر می‌باشد.
+        </div>
+    </div>
+
+</body>
+</html>
