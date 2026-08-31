@@ -3,27 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>استعلام مجوز</title>
+    <title>سامانه استعلام اصالت مجوز | باشگاه تیراندازی آپریوم</title>
+    <link href="https://cdn.jsdelivr.net/gh/vazirmatn/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
     <style>
-        body { font-family: Tahoma, sans-serif; background: #f4f4f4; padding: 15px; text-align: right; }
-        .card { background: white; padding: 20px; border-radius: 10px; border: 2px solid #006633; max-width: 400px; margin: auto; }
-        h2 { text-align: center; color: #006633; font-size: 18px; }
-        .status { text-align: center; color: green; background: #e6ffe6; padding: 6px; border-radius: 5px; font-weight: bold; margin-bottom: 15px; }
-        p { margin: 8px 0; border-bottom: 1px dashed #eee; padding-bottom: 5px; font-size: 14px; }
-        span { font-weight: bold; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Vazirmatn, Tahoma, sans-serif;
+        }
+        body {
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('range.jpg') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+        }
+        .header {
+            background: linear-gradient(135deg, #064e3b, #047857);
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+            position: relative;
+        }
+        .logo {
+            width: 90px;
+            height: 90px;
+            background: white;
+            border-radius: 50%;
+            padding: 5px;
+            margin: 0 auto 12px auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: block;
+            object-fit: contain;
+        }
+        .header h1 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+        .header p {
+            font-size: 12px;
+            opacity: 0.9;
+            letter-spacing: 0.5px;
+        }
+        .badge-verified {
+            background: #dcfce7;
+            color: #15803d;
+            border: 1px solid #86efac;
+            text-align: center;
+            padding: 10px;
+            margin: 15px 20px 5px 20px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .badge-verified::before {
+            content: "✓";
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: #16a34a;
+            color: white;
+            border-radius: 50%;
+            line-height: 20px;
+            font-size: 12px;
+        }
+        .content {
+            padding: 20px;
+        }
+        .info-group {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dashed #e2e8f0;
+            font-size: 14px;
+        }
+        .info-group:last-child {
+            border-bottom: none;
+        }
+        .label {
+            color: #64748b;
+            font-weight: 500;
+        }
+        .value {
+            color: #0f172a;
+            font-weight: 700;
+        }
+        .gun-section {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: 15px;
+            text-align: center;
+        }
+        .gun-title {
+            font-size: 13px;
+            color: #475569;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .gun-img {
+            max-width: 180px;
+            height: auto;
+            margin: 5px 0;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+        }
+        .footer-note {
+            background: #f1f5f9;
+            padding: 12px 20px;
+            text-align: center;
+            font-size: 11px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h2>باشگاه تیراندازی آپریوم</h2>
-        <div class="status">وضعیت مجوز: معتبر و فعال</div>
-        <p><span>نام و نام خانوادگی:</span> فاطمه امیدوار همت آبادی</p>
-        <p><span>کد ملی:</span> ۰۰۱۶۵۴۱۴۰۸</p>
-        <p><span>نام پدر:</span> بمانعلی</p>
-        <p><span>تاریخ تولد:</span> ۱۳۷۰/۰۷/۲۳</p>
-        <p><span>نوع سلاح:</span> تفنگ بادی Walther CP99 (مشکی)</p>
-        <p><span>شماره سریال:</span> 627768gh</p>
-        <p><span>اعتبار:</span> صرفاً جهت استفاده در باشگاه آپریوم</p>
+
+    <div class="container">
+        <div class="header">
+            <img src="logo.png" alt="لوگو آپریوم" class="logo">
+            <h1>باشگاه تیراندازی آپریوم</h1>
+            <p>سامانه رسمی استعلام اصالت مجوز حمل و استفاده</p>
+        </div>
+
+        <div class="badge-verified">
+            وضعیت مجوز: معتبر و فعال
+        </div>
+
+        <div class="content">
+            <div class="info-group">
+                <span class="label">نام و نام خانوادگی:</span>
+                <span class="value">فاطمه امیدوار همت آبادی</span>
+            </div>
+            <div class="info-group">
+                <span class="label">کد ملی:</span>
+                <span class="value">۰۰۱۶۵۴۱۴۰۸</span>
+            </div>
+            <div class="info-group">
+                <span class="label">نام پدر:</span>
+                <span class="value">بمانعلی</span>
+            </div>
+            <div class="info-group">
+                <span class="label">تاریخ تولد:</span>
+                <span class="value">۱۳۷۰/۰۷/۲۳</span>
+            </div>
+
+            <div class="gun-section">
+                <div class="gun-title">مشخصات سلاح ثبت شده</div>
+                <img src="gun.png" alt="Walther CP99" class="gun-img">
+                <div class="info-group" style="padding-bottom: 2px;">
+                    <span class="label">نوع و مدل:</span>
+                    <span class="value">تفنگ بادی Walther CP99 (مشکی)</span>
+                </div>
+                <div class="info-group" style="padding-bottom: 0;">
+                    <span class="label">شماره سریال:</span>
+                    <span class="value">627768gh</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            این مجوز صرفاً جهت استفاده از تسلیحات مجاز در داخل فضای باشگاه تیراندازی آپریوم معتبر می‌باشد.
+        </div>
     </div>
+
 </body>
 </html>
