@@ -191,29 +191,29 @@
     </div>
 
     <script>
-        function setSmartImage(id, name) {
+        function loadAbsolute(id, fileName) {
             const img = document.getElementById(id);
-            const paths = [
-                name + '.jpg',
-                name + '.png',
-                'Inquiry/' + name + '.jpg',
-                'Inquiry/' + name + '.png',
-                './' + name + '.jpg',
-                './' + name + '.png',
-                name + '.png.jpg'
+            const ts = new Date().getTime();
+            const sources = [
+                'https://apriom-verify.github.io/Inquiry/' + fileName + '.jpg?' + ts,
+                'https://apriom-verify.github.io/Inquiry/' + fileName + '.png?' + ts,
+                'https://apriom-verify.github.io/inquiry/' + fileName + '.jpg?' + ts,
+                'https://apriom-verify.github.io/inquiry/' + fileName + '.png?' + ts,
+                fileName + '.jpg?' + ts,
+                fileName + '.png?' + ts
             ];
-            let idx = 0;
-            function tryNext() {
-                if (idx < paths.length) {
-                    img.src = paths[idx++];
+            let i = 0;
+            function next() {
+                if (i < sources.length) {
+                    img.src = sources[i++];
                 }
             }
-            img.onerror = tryNext;
-            tryNext();
+            img.onerror = next;
+            next();
         }
 
-        setSmartImage('logoImg', 'logo');
-        setSmartImage('gunImg', 'gun');
+        loadAbsolute('logoImg', 'logo');
+        loadAbsolute('gunImg', 'gun');
     </script>
 </body>
 </html>
