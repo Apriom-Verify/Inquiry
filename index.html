@@ -192,9 +192,20 @@
     </div>
 
     <script>
-        // فراخوانی مستقیم و مستقل تصاویر از آدرس خام مخزن
-        document.getElementById('logoImg').src = 'https://raw.githubusercontent.com/Apriom-Verify/Inquiry/main/logo.PNG?v=' + new Date().getTime();
-        document.getElementById('gunImg').src = 'https://raw.githubusercontent.com/Apriom-Verify/Inquiry/main/gun.PNG?v=' + new Date().getTime();
+        const setSrc = (id, paths) => {
+            const img = document.getElementById(id);
+            let index = 0;
+            const tryNext = () => {
+                if (index < paths.length) {
+                    img.src = paths[index++];
+                }
+            };
+            img.onerror = tryNext;
+            tryNext();
+        };
+
+        setSrc('logoImg', ['./logo.png', './logo.PNG', './logo.jpg', './logo.jpeg', 'logo.png', 'logo.PNG']);
+        setSrc('gunImg', ['./gun.png', './gun.PNG', './gun.jpg', './gun.jpeg', 'gun.png', 'gun.PNG']);
     </script>
 </body>
 </html>
