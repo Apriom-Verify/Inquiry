@@ -87,7 +87,7 @@
             gap: 8px;
         }
         
-        /* بخش مشخصات فردی با پس‌زمینه عکس IMG_1123.jpeg */
+        /* بخش مشخصات فردی با افکت حرفه‌ای روی عکس پس‌زمینه */
         .personal-info-card {
             position: relative;
             background-color: #f8fafc;
@@ -107,7 +107,9 @@
             background-image: url('IMG_1123.jpeg');
             background-size: cover;
             background-position: center;
-            opacity: 0.22; /* وضوح مطلوب برای پس‌زمینه */
+            /* فیلترهای ترکیبی برای سیاه‌وسفید کردن و تنظیم کنتراست پیشرفته جهت خوانایی متن */
+            filter: grayscale(100%) contrast(120%) brightness(110%);
+            opacity: 0.15; 
             z-index: 1;
         }
         .personal-info-card > * {
@@ -194,7 +196,7 @@
                 <span>✅ وضعیت مجوز: معتبر و فعال</span>
             </div>
 
-            <!-- اطلاعات شخصی با پس‌زمینه عکس IMG_1123.jpeg -->
+            <!-- اطلاعات شخصی با پس‌زمینه مدرن و خوانا -->
             <div class="personal-info-card">
                 <div class="info-row">
                     <span class="label">نام و نام خانوادگی:</span>
