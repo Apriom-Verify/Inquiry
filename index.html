@@ -13,7 +13,7 @@
             font-family: Vazirmatn, Tahoma, sans-serif;
         }
         body {
-            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('range.jpg') no-repeat center center fixed;
+            background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1595590424283-b8f17842773f?q=80&w=1200') no-repeat center center fixed;
             background-size: cover;
             min-height: 100vh;
             display: flex;
@@ -23,42 +23,46 @@
         }
         .container {
             width: 100%;
-            max-width: 480px;
-            background: rgba(255, 255, 255, 0.96);
+            max-width: 450px;
+            background: rgba(255, 255, 255, 0.97);
             backdrop-filter: blur(10px);
             border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.4);
         }
         .header {
             background: linear-gradient(135deg, #064e3b, #047857);
             color: white;
             padding: 25px 20px;
             text-align: center;
-            position: relative;
         }
-        .logo {
+        .logo-box {
             width: 90px;
             height: 90px;
             background: white;
             border-radius: 50%;
-            padding: 5px;
             margin: 0 auto 12px auto;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            display: block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 4px;
+        }
+        .logo-box img {
+            width: 100%;
+            height: 100%;
             object-fit: contain;
         }
         .header h1 {
-            font-size: 20px;
+            font-size: 19px;
             font-weight: 800;
             margin-bottom: 4px;
         }
         .header p {
-            font-size: 12px;
+            font-size: 11px;
             opacity: 0.9;
-            letter-spacing: 0.5px;
         }
         .badge-verified {
             background: #dcfce7;
@@ -92,12 +96,9 @@
         .info-group {
             display: flex;
             justify-content: space-between;
-            padding: 10px 0;
+            padding: 9px 0;
             border-bottom: 1px dashed #e2e8f0;
-            font-size: 14px;
-        }
-        .info-group:last-child {
-            border-bottom: none;
+            font-size: 13.5px;
         }
         .label {
             color: #64748b;
@@ -111,25 +112,26 @@
             background: #f8fafc;
             border: 1px solid #e2e8f0;
             border-radius: 12px;
-            padding: 15px;
+            padding: 12px;
             margin-top: 15px;
             text-align: center;
         }
         .gun-title {
-            font-size: 13px;
+            font-size: 12.5px;
             color: #475569;
             font-weight: bold;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
         .gun-img {
-            max-width: 180px;
+            max-width: 160px;
             height: auto;
-            margin: 5px 0;
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+            margin: 4px auto;
+            display: block;
+            filter: drop-shadow(0 3px 5px rgba(0,0,0,0.15));
         }
         .footer-note {
             background: #f1f5f9;
-            padding: 12px 20px;
+            padding: 12px 18px;
             text-align: center;
             font-size: 11px;
             color: #64748b;
@@ -142,7 +144,9 @@
 
     <div class="container">
         <div class="header">
-            <img src="logo.png" alt="لوگو آپریوم" class="logo">
+            <div class="logo-box">
+                <img src="https://i.postimg.cc/0j0C5P24/apriom-logo.png" alt="لوگو آپریوم" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'">
+            </div>
             <h1>باشگاه تیراندازی آپریوم</h1>
             <p>سامانه رسمی استعلام اصالت مجوز حمل و استفاده</p>
         </div>
@@ -171,12 +175,12 @@
 
             <div class="gun-section">
                 <div class="gun-title">مشخصات سلاح ثبت شده</div>
-                <img src="gun.png" alt="Walther CP99" class="gun-img">
+                <img src="https://i.postimg.cc/mD8zQxYr/walther-cp99.png" alt="Walther CP99" class="gun-img" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2528/2528207.png'">
                 <div class="info-group" style="padding-bottom: 2px;">
                     <span class="label">نوع و مدل:</span>
                     <span class="value">تفنگ بادی Walther CP99 (مشکی)</span>
                 </div>
-                <div class="info-group" style="padding-bottom: 0;">
+                <div class="info-group" style="padding-bottom: 0; border: none;">
                     <span class="label">شماره سریال:</span>
                     <span class="value">627768gh</span>
                 </div>
