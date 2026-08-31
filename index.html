@@ -191,29 +191,32 @@
     </div>
 
     <script>
-        function loadAbsolute(id, fileName) {
+        function loadFallback(id, rawName) {
             const img = document.getElementById(id);
-            const ts = new Date().getTime();
-            const sources = [
-                'https://apriom-verify.github.io/Inquiry/' + fileName + '.jpg?' + ts,
-                'https://apriom-verify.github.io/Inquiry/' + fileName + '.png?' + ts,
-                'https://apriom-verify.github.io/inquiry/' + fileName + '.jpg?' + ts,
-                'https://apriom-verify.github.io/inquiry/' + fileName + '.png?' + ts,
-                fileName + '.jpg?' + ts,
-                fileName + '.png?' + ts
+            const host = location.origin + location.pathname.replace(/\/index\.html$/, '').replace(/\/$/, '');
+            
+            const paths = [
+                host + '/' + rawName + '.jpg',
+                host + '/' + rawName + '.png',
+                host + '/' + rawName + '.jpeg',
+                './' + rawName + '.jpg',
+                './' + rawName + '.png',
+                rawName + '.jpg',
+                rawName + '.png'
             ];
-            let i = 0;
-            function next() {
-                if (i < sources.length) {
-                    img.src = sources[i++];
+
+            let index = 0;
+            function tryNext() {
+                if (index < paths.length) {
+                    img.src = paths[index++] + '?t=' + new Date().getTime();
                 }
             }
-            img.onerror = next;
-            next();
+            img.onerror = tryNext;
+            tryNext();
         }
 
-        loadAbsolute('logoImg', 'logo');
-        loadAbsolute('gunImg', 'gun');
+        loadFallback('logoImg', 'logo');
+        loadFallback('gunImg', 'gun');
     </script>
 </body>
 </html>
